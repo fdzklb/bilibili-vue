@@ -9,7 +9,7 @@ const count = ref(0);
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1 class="text-3xl">{{ msg }}</h1>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
@@ -19,7 +19,7 @@ const count = ref(0);
     </p>
   </div>
 
-  <p>
+  <p class="text-red-500">
     Install
     <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
     in your IDE for a better DX
