@@ -6,6 +6,10 @@
     "jsx": "preserve", // 启用 JSX 支持并保留原始语法
     "jsxFactory": "h", // 指定 JSX 工厂函数为 Vue 的 h 函数
     "jsxFragmentFactory": "Fragment", // 指定 JSX 片段工厂
-    "types": ["vite/client", "vue"] // 添加必要的类型声明
+    "types": ["vite/client", "vue"], // 添加必要的类型声明
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }

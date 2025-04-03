@@ -1,7 +1,7 @@
 import { ContentScriptContext } from "#imports";
 import App from "./App.vue";
 import { createApp } from "vue";
-import '../global.css';
+import '../../global.css';
 
 
 export default defineContentScript({
