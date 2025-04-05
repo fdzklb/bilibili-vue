@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import ListenCard from '@/components/ListenCard/index.vue';
 import { setListeners, clearListeners } from "@/hooks/usePreventKeyboardPropagation";
+import { PauseCircle } from "lucide-vue-next";
 
 const isOpen = ref(false); // 控制卡片是否已经开启 鼠标右键页面点击插件图标时会触发
 const isShow = ref(true); // 控制卡片的显示隐藏 隐藏时在页面右侧显示一个暂停按钮 点击后显示卡片
@@ -32,27 +33,29 @@ onMounted(() => {
 onUnmounted(() => {
   browser.runtime.onMessage.removeListener(messageListener);
 });
+
+const handleUpdateIsShow = (value: boolean) => {
+  isShow.value = value
+}
+
 </script>
 
 <template>
   <div v-if="isOpen">
-    <ListenCard :isShow="isShow" />
+    <ListenCard :isShow="isShow" @updateIsShow="handleUpdateIsShow" />
     <!-- 隐藏展示的悬浮球  -->
-    <!-- <div
-      v-if="isShow"
-      class="fixed right-0 top-1/2 transform -translate-y-1/2 hover:opacity-80 transition-opacity"
+    <div
+      v-if="!isShow"
+      class="fixed right-0 top-1/3 transform -translate-y-1/2 hover:opacity-80 transition-opacity"
       @click="isShow = true"
-      @dragstart="event.dataTransfer.setData('text/plain', '')"
-      @drag="event.clientY ? (event.target as HTMLElement).style.top = `${event.clientY}px` : ''"
     >
       <div
         class="bg-primary/80 text-white p-2 rounded-l-md shadow-lg cursor-pointer"
       >
-        悬浮球图标
+        <PauseCircle className="w-6 h-6" />
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
 <style scoped></style>
-@/src/hooks/usePreventKeyboardPropagation

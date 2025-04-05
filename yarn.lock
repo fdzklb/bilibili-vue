@@ -2692,11 +2692,6 @@ lowercase-keys@^3.0.0:
   resolved "https://registry.npmmirror.com/lowercase-keys/-/lowercase-keys-3.0.0.tgz#c5e7d442e37ead247ae9db117a9d0a467c89d4f2"
   integrity sha512-ozCC6gdQ+glXOQsveKD0YsDy8DSQFjDTz4zyzEHNV5+JP5D62LmfDZ6o1cycFx9ouG940M5dE8C8CTewdj2YWQ==
 
-lucide-react@^0.468.0:
-  version "0.468.0"
-  resolved "https://registry.npmmirror.com/lucide-react/-/lucide-react-0.468.0.tgz#830c1bfd905575ddd23b832baa420c87db166910"
-  integrity sha512-6koYRhnM2N0GGZIdXzSeiNwguv1gt/FAjZOiPl76roBi3xKEXa4WmfpxgQwTTL4KipXjefrnf3oV4IsYhi4JFA==
-
 lucide-vue-next@^0.487.0:
   version "0.487.0"
   resolved "https://registry.npmmirror.com/lucide-vue-next/-/lucide-vue-next-0.487.0.tgz#18d9e6b21c37c823d1c4879203b323dd97ada5f0"
@@ -4050,11 +4045,6 @@ vue-tsc@^2.1.10:
   dependencies:
     "@volar/typescript" "~2.4.11"
     "@vue/language-core" "2.2.8"
-
-vue-virtual-list-v3@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmmirror.com/vue-virtual-list-v3/-/vue-virtual-list-v3-1.0.2.tgz#fe3baaf233d5077455244116e3b4ecfc0b5c86a7"
-  integrity sha512-/3m/qaUoccWCs7Q0y/ahxRUNFwoZPIKRoKoHXJYiKciqYM5Gt8edJsRMqfIgsVM5l3y1GItnwCCiAj7nRzQbEw==
 
 vue@*, vue@^3.5.12, vue@^3.5.13:
   version "3.5.13"

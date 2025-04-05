@@ -19,6 +19,17 @@ interface ModesTypes {
   showTranslate: boolean // 是否显示译文
 }
 
+const props = defineProps<{
+  isShow: boolean
+}>()
+
+const emit = defineEmits<{
+  (e: 'updateIsShow', value: boolean): void
+}>()
+
+const handleUpdateIsShow = (value: boolean) => {
+  emit('updateIsShow', value)
+}
 // 获取字幕数据的函数
 const getSubtitle = async (location: Location) => {
   const aidOrBvid = await getAidOrBvid(location)
@@ -26,13 +37,7 @@ const getSubtitle = async (location: Location) => {
   return subtitles
 }
 
-const props = defineProps<{
-  isShow: boolean
-}>()
 
-const emit = defineEmits<{
-  (e: 'update:isShow', value: boolean): void
-}>()
 
 const title = ref("")
 const data = ref<dataListTypes>([])
@@ -174,8 +179,7 @@ const handleDownload = (type: DownloadType, docType: string) => {
     <!-- 头部按钮操作区域 -->
     <Header
       v-model:modes="modes"
-      :isShow="isShow"
-      @update:show-card="(val) => emit('update:isShow', val)"
+      @updateIsShow="handleUpdateIsShow"
       @handleDownload="handleDownload"
     />
     <div class="h-[calc(100%-80px-64px-64px)]">

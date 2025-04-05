@@ -13,13 +13,12 @@ type ModesTypes = Record<string, boolean>
 // Props定义
 const props = defineProps<{
   modes: ModesTypes
-  isShow: boolean
-  handleDownload: (type: DownloadType, docType: string) => void
 }>()
 
 const emit = defineEmits<{
+  (e: 'updateIsShow', value: boolean): void
+  (e: 'handleDownload', type: DownloadType, docType: string): void
   (e: 'update:modes', value: ModesTypes): void
-  (e: 'update:isShow', value: boolean): void
 }>()
 
 // 本地状态
@@ -79,6 +78,7 @@ watch(modesData, (newVal) => {
             <Tooltip>
               <TooltipTrigger asChild>
                 <div
+                  @click="emit('updateIsShow', false)"
                   className="flex items-center gap-2 px-3 py-2 rounded-full hover:bg-primary/80 cursor-pointer"
                   title="收起">
                   <Minimize2 className="h-4 w-4" />
